@@ -25,7 +25,7 @@
     }
 
     .parallax {
-		background-image: url("../assets/bg.jpg");
+		background-image: url("../assets/img/bg.jpg");
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;

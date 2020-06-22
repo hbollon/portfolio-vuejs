@@ -31,18 +31,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import '@/styles/constants.scss';
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    font-family: Montserrat-Regular, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-.wrapper {
-  height: 100%;
-  width: 100%;
-}
+  .wrapper {
+    height: 100%;
+    width: 100%;
+  }
 </style>
