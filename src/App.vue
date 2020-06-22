@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper" v-if="isLoaded" id="app">
+    <LandingPage :user="user"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LandingPage from './components/LandingPage.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    LandingPage
+  },
+  data: () => ({
+    isLoaded: false,
+    user: {"name":"Hugo Bollon", "description":"Full-Stack Developer"},
+  }),
+  methods: {
+    
+  },
+  created() {
+    document.body.classList.add('loading')
+    Promise.all([
+
+    ]).then(() => {
+      this.isLoaded = true
+      this.$nextTick(() => document.body.classList.remove('loading'))
+    })
+  },
 }
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
 }
 </style>
