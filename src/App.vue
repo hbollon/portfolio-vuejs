@@ -2,18 +2,21 @@
   <div class="wrapper" v-if="isLoaded" id="app">
     <LandingPage :user="user"/>
     <Description :user="user"/>
+    <Footer :user="user"/>
   </div>
 </template>
 
 <script>
 import LandingPage from './components/LandingPage.vue'
 import Description from './components/Description.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     LandingPage,
-    Description
+    Description,
+    Footer
   },
   data: () => ({
     isLoaded: false,
@@ -34,7 +37,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @import '@/styles/constants.scss';
 
   #app {
