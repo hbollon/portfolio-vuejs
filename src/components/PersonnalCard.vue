@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3 class="text-uppercase">Personnal Informations</h3>
     <h3>{{ user.name }}</h3>
     <div class="data"><strong>E-mail:</strong> hugo.bollon@gmail.com</div>
     <div class="data"><strong>Phone:</strong> +33 6 51 99 80 78</div>

@@ -46,9 +46,6 @@
 
     #about {
         background-color: lighten(map-get($colors, dark), 100%);
-        .col-12 {
-            margin-top: 50px;
-        }
     }
 
     @media(min-width: #{map-get($breakpoints, medium)}) {

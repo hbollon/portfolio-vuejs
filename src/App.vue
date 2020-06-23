@@ -2,6 +2,7 @@
   <div class="wrapper" v-if="isLoaded" id="app">
     <LandingPage :user="user"/>
     <Description :user="user"/>
+    <Experience/>
     <Footer :user="user"/>
   </div>
 </template>
@@ -9,6 +10,7 @@
 <script>
 import LandingPage from './components/LandingPage.vue'
 import Description from './components/Description.vue'
+import Experience from './components/Experience.vue'
 import Footer from './components/Footer.vue'
 
 export default {
@@ -16,6 +18,7 @@ export default {
   components: {
     LandingPage,
     Description,
+    Experience,
     Footer
   },
   data: () => ({
