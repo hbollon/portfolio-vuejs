@@ -6,13 +6,19 @@
     <div class="data"><strong>Phone:</strong> +33 6 51 99 80 78</div>
     <div class="data"><strong>City:</strong> Chambéry, France</div>
     <div class="data"><strong>Languages:</strong> French, English</div>
+    <SocialBar/>
   </div>
 </template>
 
 <script>
+import SocialBar from './SocialBar.vue'
+
 export default {
     name: 'PersonnalCard',
     props: ['user'],
+    components: {
+        SocialBar,
+    }
 }
 </script>
 
@@ -20,6 +26,6 @@ export default {
     @import '@/styles/constants.scss';
 
     .data {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 </style>

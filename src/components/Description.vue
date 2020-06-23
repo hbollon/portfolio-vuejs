@@ -4,6 +4,9 @@
 
         <div class="section-content">
             <div class="container-fluid">
+                <div class="row justify-content-md-center">
+                    <Photo/>
+                </div>
                 <div class="row">
                     <div class="col-md-7 mr-auto">
                         <Presentation/>
@@ -21,6 +24,7 @@
     import Title from './Title.vue'
     import PersonnalCard from './PersonnalCard.vue'
     import Presentation from './Presentation.vue'
+    import Photo from './Photo.vue'
 
     export default {
         name: 'AboutMe',
@@ -28,7 +32,8 @@
         components: {
             Title,
             PersonnalCard,
-            Presentation
+            Presentation,
+            Photo
         },
         data: () => ({
             category: {"title":"About Me", "description":"Hope to know you after"},
