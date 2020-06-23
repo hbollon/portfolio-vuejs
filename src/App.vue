@@ -1,16 +1,19 @@
 <template>
   <div class="wrapper" v-if="isLoaded" id="app">
     <LandingPage :user="user"/>
+    <Description :user="user"/>
   </div>
 </template>
 
 <script>
 import LandingPage from './components/LandingPage.vue'
+import Description from './components/Description.vue'
 
 export default {
   name: 'App',
   components: {
-    LandingPage
+    LandingPage,
+    Description
   },
   data: () => ({
     isLoaded: false,
@@ -38,12 +41,10 @@ export default {
     font-family: Montserrat-Regular, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
   }
 
   .wrapper {
     height: 100%;
-    width: 100%;
   }
 </style>
