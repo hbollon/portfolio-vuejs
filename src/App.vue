@@ -3,6 +3,7 @@
     <LandingPage :user="user"/>
     <Description :user="user"/>
     <Experience/>
+    <Skills/>
     <Footer :user="user"/>
   </div>
 </template>
@@ -11,6 +12,7 @@
 import LandingPage from './components/LandingPage.vue'
 import Description from './components/Description.vue'
 import Experience from './components/Experience.vue'
+import Skills from './components/Skills.vue'
 import Footer from './components/Footer.vue'
 
 export default {
@@ -19,6 +21,7 @@ export default {
     LandingPage,
     Description,
     Experience,
+    Skills,
     Footer
   },
   data: () => ({

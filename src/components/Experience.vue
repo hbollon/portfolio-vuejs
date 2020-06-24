@@ -32,7 +32,7 @@ export default {
 	posts: { 
 		academic: [{
 			year: "From September 2020",
-			title: "Computer science Master at USMB",
+			title: "Computer Science Master at USMB",
 			content: "Specialized in artificial intelligence and collaborative systems"
 		},
 		{
