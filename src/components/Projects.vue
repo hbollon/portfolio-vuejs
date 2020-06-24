@@ -7,15 +7,17 @@
     />
     <div class="container-fluid center-block">
       <article class="content text-center">
-        <carousel class="mx-auto" :perPage="1" :navigationEnabled="true" :autoplay="true" :autoplayTimeout=4000 :loop=true style="width: 70%;">
-            <slide v-for="(post, index) in posts.projects" :key="index">
-                <header class="text-center mx-auto">
-                    <h1>{{post.title}}</h1>
-                    <h2>
-                    {{post.content}}
-                    </h2>
-                    <hr>
-                    <h3>Link : <a :href="post.link">{{post.link}}</a></h3>
+        <carousel class="mx-auto" :perPage="1" :navigationEnabled="true" :autoplay="true" :autoplayTimeout=4000 :loop=true :scrollPerPage="true" style="width: 70%;">
+            <slide v-for="(post, index) in posts.projects" :key="index" style="width: 70%;">
+                <header class="text-center mx-auto vertical-center">
+                    <div class="container p-0" style="word-wrap: break-word;">
+                        <h1>{{post.title}}</h1>
+                        <h2>
+                        {{post.content}}
+                        </h2>
+                        <hr>
+                        <h3>Link : <a :href="post.link">{{post.link}}</a></h3>
+                    </div>
                 </header>
             </slide>
         </carousel>
@@ -115,6 +117,11 @@ article .inner {
     h1{
         font-size: 3rem;
     }
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
 }
 
 h1 {
