@@ -108,5 +108,6 @@
 
     .altCaption{
         color: map-get($colors, secondary);
+        margin-top: 1rem;
     }
 </style>

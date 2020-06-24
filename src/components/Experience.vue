@@ -5,12 +5,12 @@
       <div class="row">
         <ExperienceColumn
           :posts="posts.academic"
-          title="Professional"
+          title="Education"
           class="col-12 col-md left"
         />
         <ExperienceColumn
           :posts="posts.professional"
-          title="Education"
+          title="Professional"
           class="col-12 col-md right"
         />
       </div>
