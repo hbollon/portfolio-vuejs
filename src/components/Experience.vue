@@ -47,12 +47,17 @@ export default {
 		}],
 
 		professional: [{
-			year: "07.2019 - 08.2019",
+			year: "01.2020 - 05.2020",
+			title: "Urbalog LAET Project",
+			content: "Digitizing the Urbalog board game on Android with the Nearby Connection API"
+		},
+    {
+			year: "07.2019",
 			title: "Pfeiffer Vacuum SAS, Annecy",
 			content: "Interim IT mission: implementation of a new Qlickview access management program + Laravel development"
 		},
 		{
-			year: "07.2018 - 08.2018",
+			year: "07.2018",
 			title: "Pfeiffer Vacuum SAS, Annecy",
 			content: "Interim IT mission: Management of SAP tables and inventory of sub-programs."
 		}]
