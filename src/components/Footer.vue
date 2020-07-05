@@ -5,7 +5,7 @@
         2020 {{user.name}}
         | Get this template <a href="https://github.com/hbollon/portfolio-vuejs" target="_blank">here</a> ! 
     </div>
-    <SocialBar class=""/>
+    <SocialBar :links="links"/>
   </footer>
 </template>
 
@@ -13,7 +13,7 @@
 import SocialBar from './SocialBar'
 export default {
   name: 'Footer',
-  props: ['user'],
+  props: ['user', 'links'],
   components: {
     SocialBar,
   },

@@ -3,7 +3,7 @@
     <div class="name">
       <div class="wrapper-name">
         <h1>{{ user.name }}</h1><hr>
-        <p>{{ user.description }}</p>
+        <p>{{ user.status }}</p>
       </div>
     </div>
   </header>

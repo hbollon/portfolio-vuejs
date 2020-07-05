@@ -1,18 +1,18 @@
 <template>
     <section id="about">
-        <Title :title="category.title" :description="category.description" />
+        <Title :title="content.metadata.title" :description="content.metadata.description" />
 
         <div class="section-content">
             <div class="container-fluid">
                 <div class="row justify-content-md-center">
-                    <Photo/>
+                    <Photo :user="user"/>
                 </div>
                 <div class="row">
                     <div class="col-md-7 mr-auto">
-                        <Presentation/>
+                        <Presentation :content="content"/>
                     </div>
                     <div class="col-md-4">
-                        <PersonnalCard :user="user"/>
+                        <PersonnalCard :user="user" :links="links"/>
                     </div>
                 </div>
             </div>
@@ -28,16 +28,13 @@
 
     export default {
         name: 'AboutMe',
-        props: ['user'],
+        props: ['user', 'content', 'links'],
         components: {
             Title,
             PersonnalCard,
             Presentation,
             Photo
         },
-        data: () => ({
-            category: {"title":"About Me", "description":"Hope to know you after"},
-        }),
     }
 </script>
 

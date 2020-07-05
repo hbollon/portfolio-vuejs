@@ -1,11 +1,11 @@
 <template>
   <div>
     <h3>{{ user.name }}</h3>
-    <div class="data"><strong>E-mail:</strong> hugo.bollon@gmail.com</div>
-    <div class="data"><strong>Phone:</strong> +33 6 51 99 80 78</div>
-    <div class="data"><strong>City:</strong> Chambéry, France</div>
-    <div class="data"><strong>Languages:</strong> French, English</div>
-    <SocialBar/>
+    <div class="data"><strong>E-mail:</strong> {{ user.email }}</div>
+    <div class="data"><strong>Phone:</strong> {{ user.phone }}</div>
+    <div class="data"><strong>City:</strong> {{ user.city }}</div>
+    <div class="data"><strong>Languages:</strong> {{ user.lang }}</div>
+    <SocialBar :links="links"/>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import SocialBar from './SocialBar.vue'
 
 export default {
     name: 'PersonnalCard',
-    props: ['user'],
+    props: ['user', 'links'],
     components: {
         SocialBar,
     }

@@ -2,8 +2,8 @@
   <section id="experience">
     <Title
       class="title"
-      :title="category.title"
-      :description="category.description"
+      :title="content.metadata.title"
+      :description="content.metadata.description"
     />
     <div class="container-fluid">
       <div class="row">
@@ -33,10 +33,6 @@ export default {
     Title,
     ExperienceColumn,
   },
-  data: () => ({
-    category: { title: "Experience", description: "Professional and academic" },
-    posts: null,
-  }),
 };
 </script>
 
