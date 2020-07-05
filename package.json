@@ -14,6 +14,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "bootstrap": "^4.5.0",
     "core-js": "^3.6.5",
+    "cosmicjs": "^3.2.48",
     "css-loader": "^3.6.0",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
