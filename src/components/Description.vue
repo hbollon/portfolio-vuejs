@@ -1,22 +1,26 @@
 <template>
     <section id="about">
-        <Title :title="content.metadata.title" :description="content.metadata.description" />
+        <AnimateOnVisible name="fadeDown" duration="1">
+            <Title :title="content.metadata.title" :description="content.metadata.description" />
+        </AnimateOnVisible>
 
-        <div class="section-content">
-            <div class="container-fluid">
-                <div class="row justify-content-md-center">
-                    <Photo :user="user"/>
-                </div>
-                <div class="row">
-                    <div class="col-md-7 mr-auto">
-                        <Presentation :content="content"/>
+        <AnimateOnVisible name="fadeRight" duration="1">
+            <div class="section-content">
+                <div class="container-fluid">
+                    <div class="row justify-content-md-center">
+                        <Photo :user="user"/>
                     </div>
-                    <div class="col-md-4">
-                        <PersonnalCard :user="user" :links="links"/>
+                    <div class="row">
+                        <div class="col-md-7 mr-auto">
+                            <Presentation :content="content"/>
+                        </div>
+                        <div class="col-md-4">
+                            <PersonnalCard :user="user" :links="links"/>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </AnimateOnVisible>
     </section>
 </template>
 

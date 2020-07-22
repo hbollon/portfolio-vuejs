@@ -2,6 +2,8 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue'
 
+import AnimateOnVisible from "./components/AnimateOnVisible.vue"
+
 Vue.use(BootstrapVue)
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -10,8 +12,9 @@ import { faFacebookSquare, faInstagramSquare, faLinkedin, faGithubSquare } from 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faCopyright, faFacebookSquare, faInstagramSquare, faLinkedin, faGithubSquare)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('AnimateOnVisible', AnimateOnVisible)
 Vue.config.productionTip = false
 
 new Vue({

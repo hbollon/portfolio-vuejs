@@ -1,12 +1,17 @@
 <template>
     <section id="skills">
-        <Title :title="content.metadata.title" :description="content.metadata.description" />
+        <AnimateOnVisible name="fadeDown" duration="1">
+            <Title :title="content.metadata.title" :description="content.metadata.description" />
+        </AnimateOnVisible>
+
         <div class="section-content">
             <div class="container-fluid">
                 <div class="row d-flex flex-wrap align-items-center">
                     <div class="col-md-2 m-auto pb-4" v-for="(post, index) in this.content.metadata.items" :key="index">
-                        <img id="imgLogo" class="img-responsive mx-auto d-block" :src="getImgUrl(post.img)" :alt="post.title"/>
-                        <div id="divAlt" class="altCaption text-center">{{post.title}}</div>
+                        <AnimateOnVisible name="bounce">
+                            <img id="imgLogo" class="img-responsive mx-auto d-block" :src="getImgUrl(post.img)" :alt="post.title"/>
+                            <div id="divAlt" class="altCaption text-center">{{post.title}}</div>
+                        </AnimateOnVisible>
                     </div>
                 </div>
             </div>
