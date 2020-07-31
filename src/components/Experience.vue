@@ -69,6 +69,21 @@ $linear: map-get($colors, dark);
   }
 }
 
+@media (max-width: #{map-get($breakpoints, small)}) {
+  .right {
+    margin-top: 20px;
+  }
+  .left:before {
+    content : "";
+    position: absolute;
+    left    : 20%;
+    bottom  : 0;
+    height  : 2px;
+    width   : 60%;  /* or 100px */
+    border-bottom:2px solid $linear;
+}
+}
+
 /deep/ .text-wrapper {
   &:after {
     border-bottom: 1px solid map-get($colors, dark);

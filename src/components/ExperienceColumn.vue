@@ -28,17 +28,17 @@ export default {
     margin-top: 0;
   }
   .resume-description {
-	font-size: 1.7rem;
+    font-size: 1.7rem;
   }
   .year {
     font-weight: 600;
-	margin-bottom: 5px;
+    margin-bottom: 5px;
   }
 }
 .color-light {
-	color: map-get($colors, light);
+  color: map-get($colors, light);
 }
 .color-darker {
-	color: map-get($colors, dark);
+  color: map-get($colors, dark);
 }
 </style>

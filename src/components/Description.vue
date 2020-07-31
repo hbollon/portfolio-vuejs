@@ -7,14 +7,14 @@
         <AnimateOnVisible name="fadeRight" duration="1">
             <div class="section-content">
                 <div class="container-fluid">
-                    <div class="row justify-content-md-center">
+                    <div class="row justify-content-center">
                         <Photo :user="user"/>
                     </div>
                     <div class="row">
-                        <div class="col-md-7 mr-auto">
+                        <div class="col-md-7 mr-auto card-mobile">
                             <Presentation :content="content"/>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 card-mobile">
                             <PersonnalCard :user="user" :links="links"/>
                         </div>
                     </div>
@@ -53,6 +53,13 @@
         .section-content {
             width: 80%;
             margin: 0 auto;
+        }
+    }
+
+    @media(max-width: #{map-get($breakpoints, medium)}) {
+        .card-mobile {
+            text-align: center !important;
+            margin-top: 20px;
         }
     }
 </style>
