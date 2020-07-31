@@ -10,6 +10,7 @@
 - Material design ✨
 - Bootstrap 4.5 & SCSS ✨
 - Responsive ✨
+- Animated layout ✨
 - Content managed with CosmicJS API ✨
 
 ## Project setup
