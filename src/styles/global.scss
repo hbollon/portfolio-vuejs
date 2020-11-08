@@ -52,11 +52,11 @@ li {
 }
 
 .timeline {
-  @media (max-width: #{map-get($breakpoints, small)}) {
+  @media (max-width: #{map-get($breakpoints, medium)}) {
     width: 100%;
   }
 
-  @media (min-width: #{map-get($breakpoints, small)}) {
+  @media (min-width: #{map-get($breakpoints, medium)}) {
     width: 60%
   }
 }
