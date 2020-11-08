@@ -50,3 +50,7 @@ a {
 li {
   margin-bottom: 10px;
 }
+
+[class^="gb-"]:not(.gb-base-icon) {
+  font-family: Montserrat-Regular, Helvetica, sans-serif !important;
+}

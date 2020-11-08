@@ -10,8 +10,18 @@
 
     <div class="container-fluid center-block">
       <article class="content text-center">
-		<AnimateOnVisible name="fadeUp" duration="1">
-			<carousel class="mx-auto" :perPage="1" :navigationEnabled="true" :autoplay="true" :autoplayTimeout=4000 :loop=true :scrollPerPage="true" style="width: 70%;">
+    
+		<AnimateOnVisible class="mx-auto" v-for="(post, index) in content.metadata.items" :key="index" style="width: 60%;" name="fadeLeft" duration="1">
+			<vue-timeline-update
+        :date="new Date(post.date)"
+        :title="post.title"
+        :description="post.content"
+        :thumbnail="getImgUrl(post.image)"
+        :color="post.color"
+        :category="post.tag"
+        icon="code"
+      />
+      <!-- <carousel class="mx-auto" :perPage="1" :navigationEnabled="true" :autoplay="true" :autoplayTimeout=4000 :loop=true :scrollPerPage="true" style="width: 70%;">
 				<slide v-for="(post, index) in content.metadata.items" :key="index" style="width: 70%;">
 					<header class="text-center mx-auto vertical-center">
 						<div class="container p-0" style="word-wrap: break-word;">
@@ -24,7 +34,7 @@
 						</div>
 					</header>
 				</slide>
-			</carousel>
+			</carousel> -->
 		</AnimateOnVisible>
       </article>
     </div>
@@ -33,15 +43,19 @@
 
 <script>
 import Title from "./Title.vue";
-import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   name: "Projects",
   props: ['content'],
   components: {
-    Title,
-    Carousel,
-    Slide
+    Title
+  },
+  methods: {
+    getImgUrl(img) {
+      if(img == undefined || img == "")
+        return ""
+      return require('../assets/img/projects/'+img)
+    },
   },
 };
 </script>

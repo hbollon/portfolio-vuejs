@@ -6,6 +6,10 @@ import AnimateOnVisible from "./components/AnimateOnVisible.vue"
 
 Vue.use(BootstrapVue)
 
+import VueTimeline from "@growthbunker/vuetimeline";
+
+Vue.use(VueTimeline);
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCopyright} from '@fortawesome/free-solid-svg-icons'
 import { faFacebookSquare, faInstagramSquare, faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
