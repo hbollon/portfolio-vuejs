@@ -1,10 +1,10 @@
 <template>
     <section id="about">
-        <AnimateOnVisible name="fadeDown" duration="1">
+        <AnimateOnVisible name="fadeDown" :duration="1">
             <Title :title="content.metadata.title" :description="content.metadata.description" />
         </AnimateOnVisible>
 
-        <AnimateOnVisible name="fadeRight" duration="1">
+        <AnimateOnVisible name="fadeRight" :duration="1">
             <div class="section-content">
                 <div class="container-fluid">
                     <div class="row justify-content-center">

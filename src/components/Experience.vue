@@ -1,6 +1,6 @@
 <template>
   <section id="experience">
-    <AnimateOnVisible name="fadeDown" duration="1">
+    <AnimateOnVisible name="fadeDown" :duration="1">
       <Title
         class="title"
         :title="content.metadata.title"
@@ -8,7 +8,7 @@
       />
     </AnimateOnVisible>
 
-	<AnimateOnVisible name="fadeUp" duration="1">
+	<AnimateOnVisible name="fadeUp" :duration="1">
 		<div class="container-fluid">
 			<div class="row">
 				<ExperienceColumn

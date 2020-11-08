@@ -1,6 +1,6 @@
 <template>
     <section id="skills">
-        <AnimateOnVisible name="fadeDown" duration="1">
+        <AnimateOnVisible name="fadeDown" :duration="1">
             <Title :title="content.metadata.title" :description="content.metadata.description" />
         </AnimateOnVisible>
 
