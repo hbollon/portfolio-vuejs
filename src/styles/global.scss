@@ -51,6 +51,16 @@ li {
   margin-bottom: 10px;
 }
 
+.timeline {
+  @media (max-width: #{map-get($breakpoints, small)}) {
+    width: 100%;
+  }
+
+  @media (min-width: #{map-get($breakpoints, small)}) {
+    width: 60%
+  }
+}
+
 [class^="gb-"]:not(.gb-base-icon) {
   font-family: Montserrat-Regular, Helvetica, sans-serif !important;
 }

@@ -11,7 +11,7 @@
     <div class="container-fluid center-block">
       <article class="content text-center">
     
-		<AnimateOnVisible class="mx-auto" v-for="(post, index) in content.metadata.items" :key="index" style="width: 60%;" name="fadeLeft" :duration="0.5">
+		<AnimateOnVisible class="timeline mx-auto" v-for="(post, index) in content.metadata.items" :key="index" name="fadeLeft" :duration="0.5">
 			<vue-timeline-update
         :date="new Date(post.date)"
         :title="post.title"
