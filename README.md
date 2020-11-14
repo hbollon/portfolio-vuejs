@@ -4,6 +4,18 @@
 
 <p align="center"><strong> Live demo with my personnal data <a href="https://hugobollon.me">here</a> ! </strong></p>
 
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Setup](#project-setup)
+- [Edit Content](#how-to-edit-content)
+- [Author](#author)
+- [Contributing](#-contributing)
+
+---
+
 ## Features
 - Builded with VueJs framework ✨
 - One page layout ✨
@@ -43,14 +55,18 @@ VUE_APP_COSMICJS_BUCKET_SLUG=" "
 VUE_APP_COSMICJS_BUCKET_READ_KEY=" "
 ```
 
-Of course, you will also have to create your content on your CosmicJS bucket (be careful to respect the slugs that I use if you do not want to have to adapt the code, I will do a tutorial but in the meantime do not hesitate to open issues if you have a problem :) )
+You must create this bucket on your CosmicJS account while being careful to respect the slugs I used if you don't want to have to adapt the code!
+
+To do that properly, you must create a new **Object Type** inside of your CosmicJS Bucket with __portfolio-contents__ as slug.
+Now you can create required objects inside of it by following my model that you can find [here](https://api.cosmicjs.com/v1/hugobollonme/objects?pretty=true&hide_metafields=false&type=portfolio-contents&read_key=NKbRz4y01nhElqkgN4wK238zl7nuoDq4se8W9yOSIFRE9P4lca&limit=20&props=slug,title,content,metadata,).
 
 ## Author
 
 👤 **Hugo Bollon**
 
 * Github: [@hbollon](https://github.com/hbollon)
-* LinkedIn: [@Hugo Bollon](https://www.linkedin.com/in/hugo-bollon-68a2381a4/)
+* LinkedIn: [@Hugo Bollon](https://www.linkedin.com/in/hugobollon/)
+* Portfolio: [hugobollon.me](https://www.hugobollon.me)
 
 ## 🤝 Contributing
 
