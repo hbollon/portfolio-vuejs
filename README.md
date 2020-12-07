@@ -13,6 +13,7 @@
 - [Edit Content](#how-to-edit-content)
 - [Author](#author)
 - [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
@@ -45,8 +46,11 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## How to edit content
-This template have a CMS support with CosmicJS.
-You can easily put your content there by creating and linking your cosmicJS account. To do this, you just have to modify the variables contained in the ENV file (API token, bucket slug and read key).
+This template have a CMS support with CosmicJS. You can easily put your content there by creating and linking your CosmicJS account. 
+
+In order to customize your portfolio, you must create a CosmicJS account and a new fresh bucket on it. Once done, you must update credentials of the **.env** file.
+
+To do this, you just have to modify the variables contained in the ENV file (API token, bucket slug and read key).
 
 ```env
 # CosmicJS 
@@ -55,11 +59,9 @@ VUE_APP_COSMICJS_BUCKET_SLUG=" "
 VUE_APP_COSMICJS_BUCKET_READ_KEY=" "
 ```
 
-You must create this bucket on your CosmicJS account while being careful to respect the slugs I used if you don't want to have to adapt the code!
+After that, you need to create the object type and data we will use. To do that properly and easily, you can import the json file, located [inside the data folder of this repo](https://github.com/hbollon/portfolio-vuejs/blob/master/data/portfolio-vuejs_import.json), by accessing import/export settings inside your bucket settings page.
 
-To do that properly, you must create a new **Object Type** inside of your CosmicJS Bucket with __portfolio-contents__ as slug.
-Now you can create required objects inside of it by following my model that you can find [here](https://api.cosmicjs.com/v1/hugobollonme/objects?pretty=true&hide_metafields=false&type=portfolio-contents&read_key=NKbRz4y01nhElqkgN4wK238zl7nuoDq4se8W9yOSIFRE9P4lca&limit=20&props=slug,title,content,metadata,).
-
+Now, you can customize it with your data through CosmicJS interface!
 ## Author
 
 👤 **Hugo Bollon**
@@ -75,3 +77,7 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+This project is under [MIT](https://github.com/hbollon/portfolio-vuesjs/blob/master/LICENSE) license.
