@@ -40,6 +40,8 @@ export default {
     getImgUrl(img) {
       if(img == undefined || img == "")
         return ""
+      if(/.*:\/\/.*/.exec(img) !== null)
+        return img
       return require('../assets/img/projects/'+img)
     },
   },
