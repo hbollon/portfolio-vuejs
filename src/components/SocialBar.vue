@@ -1,6 +1,6 @@
  <template>
   <div class="social-wrap">
-    <ul>
+    <ul class="social-bar">
       <li>
         <a :href="links.metadata.facebook" target="_blank">
           <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']" />
