@@ -4,8 +4,8 @@
       <LandingPage :user="user" />
       <Description :user="user" :content="findSlug('description')" :links="findSlug('links')" />
       <Experience :content="findSlug('experiences')" />
-      <Skills :content="findSlug('skills')" />
-      <Projects :content="findSlug('projects')" />
+      <Skills v-if="skills.length" :skills="skills" />
+<!--      <Projects :content="findSlug('projects')" />-->
       <Footer :user="user" :links="findSlug('links')" />
     </div>
   </transition>
@@ -16,7 +16,7 @@ import LandingPage from "./components/LandingPage.vue";
 import Description from "./components/Description.vue";
 import Experience from "./components/Experience.vue";
 import Skills from "./components/Skills.vue";
-import Projects from "./components/Projects.vue";
+// import Projects from "./components/Projects.vue";
 import Footer from "./components/Footer.vue";
 
 import { bucket } from "./cosmic.js";
@@ -28,27 +28,49 @@ export default {
     Description,
     Experience,
     Skills,
-    Projects,
+    // Projects,
     Footer,
   },
   data: () => ({
     isLoaded: false,
     user: {},
     posts: [],
+    skills: [],
   }),
   methods: {
     fetchPosts() {
-      return bucket.getObjects({
-        type: "portfolio-contents",
-        props: "slug,title,metadata",
-      });
+      const params = {
+        query: {
+          type: 'posts',
+          // locale: 'en' // optional, if localization set on Objects
+        },
+        props: 'slug,title,content,metadata', // get only what you need
+        sort: '-created_at' // optional, defaults to order in dashboard
+      }
+      return bucket.getObjects(params);
+    },
+    fetchSkills() {
+      const params = {
+        query: {
+          type: 'skills',
+          // locale: 'en' // optional, if localization set on Objects
+        },
+        props: 'slug,title,content,metadata', // get only what you need
+        // sort: '-created_at' // optional, defaults to order in dashboard
+      }
+      return bucket.getObjects(params);
     },
     fetchUser() {
-      return bucket.getObjects({
-        type: "portfolio-contents",
-        q: "user-data",
-        props: "slug,title,metadata",
-      });
+      const params = {
+        query: {
+          type: 'users',
+          // locale: 'en' // optional, if localization set on Objects Les Simpson
+        },
+        limit: 5,
+        props: 'slug,title,content,metadata', // get only what you need
+        sort: '-created_at' // optional, defaults to order in dashboard
+      }
+      return bucket.getObjects(params);
     },
     fetchObjectTypes() {
       return bucket.getObjectTypes();
@@ -67,9 +89,12 @@ export default {
   },
   created() {
     document.body.classList.add("loading");
-    Promise.all([this.fetchPosts(), this.fetchUser()]).then(([posts, user_data]) => {
+
+    Promise.all([this.fetchPosts(), this.fetchSkills(), this.fetchUser()]).then(([posts, skills, user_data]) => {
       user_data = this.extractFirstObject(user_data);
       this.posts = posts.objects;
+      console.log("user skills ==>> ", skills.objects)
+      this.skills = skills.objects;
       this.user = {
         name: user_data.metadata.name,
         status: user_data.metadata.status,
@@ -87,7 +112,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/constants.scss";
+@import "./styles/constants.scss";
 
 #app {
   font-family: Montserrat-Regular, serif;

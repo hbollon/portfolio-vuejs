@@ -66,15 +66,15 @@ After that, you need to create the object type and data we will use. To do that 
 Now, you can customize it with your data through CosmicJS interface!
 ## Author
 
-👤 **Hugo Bollon**
+👤 **Dylan Zambou**
 
-* Github: [@hbollon](https://github.com/hbollon)
-* LinkedIn: [@Hugo Bollon](https://www.linkedin.com/in/hugobollon/)
-* Portfolio: [hugobollon.me](https://www.hugobollon.me)
+* Github: [@viryl](https://github.com/viryl15)
+* LinkedIn: [@dylan](https://www.linkedin.com/in/rovel-dylan-tematio-zambou-596303172/)
+* Portfolio: [hugobollon.me](https://www.dylanzambou.me)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/hbollon/portfolio-vuejs/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/viryl15/portfolio-vuejs/issues). 
 
 ## Show your support
 
@@ -82,4 +82,4 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-This project is under [MIT](https://github.com/hbollon/portfolio-vuesjs/blob/master/LICENSE) license.
+This project is under [MIT](https://github.com/viryl15/portfolio-vuesjs/blob/master/LICENSE) license.

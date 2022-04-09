@@ -1,8 +1,8 @@
 <template>
   <footer class="footer">
     <div>
-        <font-awesome-icon class="copyright-icon" icon="copyright"/> 
-        2020 {{user.name}}
+        <font-awesome-icon class="copyright-icon" icon="copyright"/>
+      {{ (new Date()).getFullYear() }} {{user.name}}
         | Get this template <a href="https://github.com/hbollon/portfolio-vuejs" target="_blank">here</a> ! 
     </div>
     <SocialBar :links="links"/>

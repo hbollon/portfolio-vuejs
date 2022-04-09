@@ -43,7 +43,7 @@
 </script>
 
 <style scoped lang="scss">
-    @import '@/styles/constants.scss';
+    @import '../styles/constants.scss';
 
     #about {
         background-color: lighten(map-get($colors, dark), 100%);
