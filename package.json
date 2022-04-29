@@ -5,7 +5,11 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
+        "predeploy": "vue-cli-service build",
+        "deploy": "gh-pages -d dist",
+        "clean": "gh-pages-clean",
         "lint": "vue-cli-service lint"
+    
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
