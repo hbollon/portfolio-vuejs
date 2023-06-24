@@ -60,7 +60,7 @@ $linear: map-get($colors, dark);
   color: map-get($colors, light);
 }
 
-/deep/ .text-wrapper {
+.text-wrapper {
   &:after {
     border-bottom: 1px solid map-get($colors, dark);
   }
