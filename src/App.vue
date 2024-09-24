@@ -2,11 +2,11 @@
   <transition name="fade" tag="div" class="wrapper" mode="out-in">
     <div class="wrapper" v-if="isLoaded" id="app">
       <LandingPage :user="user" />
-      <Description :user="user" :content="findSlug('description')" :links="findSlug('links')" />
-      <Experience :content="findSlug('experiences')" />
-      <Skills :content="findSlug('skills')" />
-      <Projects :content="findSlug('projects')" />
-      <Footer :user="user" :links="findSlug('links')" />
+      <Description :user="user" :content="description" :links="links" />
+      <Experience :content="experiences" />
+      <Skills :content="skills" />
+      <Projects :content="projects" />
+      <Footer :user="user" :links="links" />
     </div>
   </transition>
 </template>
@@ -19,7 +19,7 @@ import Skills from "./components/Skills.vue";
 import Projects from "./components/Projects.vue";
 import Footer from "./components/Footer.vue";
 
-import { bucket } from "./cosmic.js";
+import { cosmic } from "./cosmic.js";
 
 export default {
   name: "App",
@@ -34,29 +34,19 @@ export default {
   data: () => ({
     isLoaded: false,
     user: {},
-    posts: [],
+    description: {},
+    links: {},
+    experiences: {},
+    skills: {},
+    projects: {},
   }),
   methods: {
-    fetchPosts() {
-      return bucket.getObjects({
-        type: "portfolio-contents",
-        props: "slug,title,metadata",
-      });
-    },
-    fetchUser() {
-      return bucket.getObjects({
-        type: "portfolio-contents",
-        q: "user-data",
-        props: "slug,title,metadata",
-      });
-    },
-    fetchObjectTypes() {
-      return bucket.getObjectTypes();
-    },
-    findSlug(slug) {
-      return this.posts.find((item) => {
-        return item.slug === slug;
-      });
+    async fetchObject(slug) {
+      return await cosmic.objects.findOne({
+        type: slug,
+        slug: slug
+      }).props("slug,title,metadata")
+      .depth(1)
     },
     extractFirstObject(objects) {
       if(objects.objects == null)
@@ -67,18 +57,35 @@ export default {
   },
   created() {
     document.body.classList.add("loading");
-    Promise.all([this.fetchPosts(), this.fetchUser()]).then(([posts, user_data]) => {
-      user_data = this.extractFirstObject(user_data);
-      this.posts = posts.objects;
+    Promise.all([
+      this.fetchObject('user-data'),
+      this.fetchObject('description'),
+      this.fetchObject('links'),
+      this.fetchObject('experiences'),
+      this.fetchObject('skills'),
+      this.fetchObject('projects')
+    ]).then(([
+      user_data,
+      description,
+      links,
+      experiences,
+      skills,
+      projects
+    ]) => {
       this.user = {
-        name: user_data.metadata.name,
-        status: user_data.metadata.status,
-        email: user_data.metadata.email,
-        phone: user_data.metadata.phone,
-        city: user_data.metadata.city,
-        lang: user_data.metadata.lang,
-        photo: user_data.metadata.photo,
+        name: user_data.object.metadata.name,
+        status: user_data.object.metadata.status,
+        email: user_data.object.metadata.email,
+        phone: user_data.object.metadata.phone,
+        city: user_data.object.metadata.city,
+        lang: user_data.object.metadata.lang,
+        photo: user_data.object.metadata.photo,
       }
+      this.description = description
+      this.links = links
+      this.experiences = experiences
+      this.skills = skills
+      this.projects = projects
       this.isLoaded = true;
       this.$nextTick(() => document.body.classList.remove("loading"));
     });

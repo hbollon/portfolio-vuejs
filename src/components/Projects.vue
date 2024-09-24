@@ -3,15 +3,15 @@
     <AnimateOnVisible name="fadeDown" :duration="1">
 		<Title
 		class="title"
-		:title="content.metadata.title"
-		:description="content.metadata.description"
+		:title="content.object.metadata.title"
+		:description="content.object.metadata.description"
 		/>
     </AnimateOnVisible>
 
     <div class="container-fluid center-block">
       <article class="content text-center">
-    
-		<AnimateOnVisible class="timeline mx-auto" v-for="(post, index) in content.metadata.items" :key="index" name="fadeLeft" :duration="0.5">
+
+		<AnimateOnVisible class="timeline mx-auto" v-for="(post, index) in content.object.metadata.items" :key="index" name="fadeLeft" :duration="0.5">
 			<vue-timeline-update
         :date="new Date(post.date)"
         :title="post.title"
@@ -40,6 +40,8 @@ export default {
     getImgUrl(img) {
       if(img == undefined || img == "")
         return ""
+      else if(/^https:\/\/cdn\.cosmicjs\.com\/.+\.(jpg|png|gif)$/.test(img))
+        return img
       return require('../assets/img/projects/'+img)
     },
   },

@@ -1,7 +1,7 @@
 <template>
     <section id="about">
         <AnimateOnVisible name="fadeDown" :duration="1">
-            <Title :title="content.metadata.title" :description="content.metadata.description" />
+            <Title :title="content.object.metadata.title" :description="content.object.metadata.description" />
         </AnimateOnVisible>
 
         <AnimateOnVisible name="fadeRight" :duration="1">

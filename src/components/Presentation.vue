@@ -1,8 +1,8 @@
 <template>
   <div class="paragraph">
-    <h3>{{content.metadata.pres_title}}</h3>
-    <div class="begin">{{content.metadata.pres_first}}</div>
-    <p>{{content.metadata.pres_second}}</p>
+    <h3>{{content.object.metadata.pres_title}}</h3>
+    <div class="begin">{{content.object.metadata.pres_first}}</div>
+    <p>{{content.object.metadata.pres_second}}</p>
   </div>
 </template>
 
